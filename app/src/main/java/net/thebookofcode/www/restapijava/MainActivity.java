@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import net.thebookofcode.www.restapijava.api.JsonPlaceHolderApi;
-import net.thebookofcode.www.restapijava.model.Comment;
-import net.thebookofcode.www.restapijava.model.Post;
+import net.thebookofcode.www.restapijava.entities.Comment;
+import net.thebookofcode.www.restapijava.entities.Post;
+import net.thebookofcode.www.restapijava.ui.ListFragment;
 
 import java.util.HashMap;
 import java.util.List;
@@ -28,20 +29,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtResult = findViewById(R.id.txtResult);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        api = retrofit.create(JsonPlaceHolderApi.class);
-
         // getPosts();
         // getComments();
         // createPost();
         // updatePost();
-        deletePost();
+        // deletePost();
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frameLayout, new ListFragment())
+                    .commit();
+        }
 
     }
 

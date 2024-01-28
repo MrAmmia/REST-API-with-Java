@@ -1,4 +1,4 @@
-package net.thebookofcode.www.restapijava.model;
+package net.thebookofcode.www.restapijava.entities;
 
 import com.google.gson.annotations.SerializedName;
 

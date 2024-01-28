@@ -1,7 +1,7 @@
 package net.thebookofcode.www.restapijava.api;
 
-import net.thebookofcode.www.restapijava.model.Comment;
-import net.thebookofcode.www.restapijava.model.Post;
+import net.thebookofcode.www.restapijava.entities.Comment;
+import net.thebookofcode.www.restapijava.entities.Post;
 
 import java.util.List;
 import java.util.Map;
